@@ -56,7 +56,11 @@ spec:
       name: Fetch Base
       action: fetch:plain
       input:
+<<<<<<< HEAD:java-template/template.yaml
         url: shared-files/
+=======
+        url: ../shared-files
+>>>>>>> parent of 9878aa3 (fixing-path-4):java-template/template-02.yaml
 
         # /Users/loujaina.bakar/testing-temp-repo/shared-files
         # /Users/loujaina.bakar/testing-temp-repo/java-template/template-02.yaml
