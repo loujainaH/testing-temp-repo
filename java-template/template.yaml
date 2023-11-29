@@ -56,7 +56,9 @@ spec:
       name: Fetch Base
       action: fetch:plain
       input:
-        url: ./java-k8s-service
+        url:
+          - shared-files/.github
+          - shared-files/ops
 
         # /Users/loujaina.bakar/testing-temp-repo/shared-files
         # /Users/loujaina.bakar/testing-temp-repo/java-template/template-02.yaml
@@ -65,7 +67,7 @@ spec:
       name: Fetch Skeleton + Template
       action: fetch:template
       input:
-        url: shared-files/*
+        url: ./java-k8s-service
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
