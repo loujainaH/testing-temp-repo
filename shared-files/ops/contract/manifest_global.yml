@@ -1,0 +1,15 @@
+global:
+  meta:
+    service-info:
+      name: ${{values.component_id}}
+  iam_permission_statements:
+    - Sid: SecretManager
+      Effect: Allow
+      Action:
+        - secretsmanager:GetResourcePolicy
+        - secretsmanager:GetSecretValue
+        - secretsmanager:DescribeSecret
+        - secretsmanager:ListSecretVersionIds
+      Resource:
+        - arn:aws:secretsmanager:eu-west-1:{accountId}:secret:secret/${{values.component_id}}
+        - arn:aws:secretsmanager:eu-west-1:{accountId}:secret:secret/${{values.component_id}}/*
