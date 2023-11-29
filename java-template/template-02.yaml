@@ -56,7 +56,7 @@ spec:
       name: Fetch Base
       action: fetch:plain
       input:
-        url: ./shared-files
+        url: ./testing-temp-repo/shared-files
         # /Users/loujaina.bakar/testing-temp-repo/shared-files
         # /Users/loujaina.bakar/testing-temp-repo/java-template/template-02.yaml
 
