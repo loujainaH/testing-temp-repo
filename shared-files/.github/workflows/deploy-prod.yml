@@ -1,0 +1,26 @@
+name: Deployment Production
+
+on:
+  release:
+    types: [published]
+
+  # In urgent cases we allow to manually trigger this step
+  workflow_dispatch:
+    inputs:
+      action:
+        type: choice
+        description: Name of DevX action
+        options:
+          - install
+          - force_install
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    uses: careem/shared-workflows/.github/workflows/devx.yml@master
+    secrets: inherit
+    with:
+      service-name: ${{values.component_id}}
+      env: prod
+      profile: prod-rh
+      action: ${{ github.event.inputs.action || 'install'  }}

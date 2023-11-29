@@ -1,0 +1,21 @@
+name: Rollback Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        type: choice
+        description: Which environment to use
+        options:
+          - prod-rh
+          - dev-rh
+jobs:
+  deploy:
+    name: Rollback Production
+    uses: careem/shared-workflows/.github/workflows/devx.yml@master
+    secrets: inherit
+    with:
+      service-name: ${{values.component_id}}
+      env: prod
+      profile: ${{inputs.profile}}
+      action: rollback
