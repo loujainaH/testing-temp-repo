@@ -1,0 +1,42 @@
+dev-rh:
+  deployments:
+    deploy-to:
+      kubernetes:
+        probes:
+          livenessProbe:
+            initialDelaySeconds: 90
+            httpGet:
+              path: /health
+              port: 8080
+          readinessProbe:
+            initialDelaySeconds: 90
+            httpGet:
+              path: /health
+              port: 8080
+        env:
+          ENV: dev
+          environment_prefix: qa
+        horizontalPodAutoscaler:
+          minReplicas: 1
+          maxReplicas: 2
+          metrics:
+          - type: Resource
+            resource:
+              name: cpu
+              target:
+                type: Utilization
+                averageUtilization: 80
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 2Gi
+            ephemeral-storage: 1Gi
+          limits:
+            cpu: 1000m
+            memory: 2Gi
+            ephemeral-storage: 1Gi
+        javaService:
+          spring:
+            activeProfiles: qa
+          jvm:
+            useContainerSupport: false
