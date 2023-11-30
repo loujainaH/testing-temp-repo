@@ -46,7 +46,7 @@ jobs:
       service-name: ${{values.component_id}}
       env: dev
       profile: dev-rh
-      action: ${{ github.event.inputs.action || 'install'  }}
+      # action: ${{ github.event.inputs.action || 'install'  }}
 
   draft-release:
     if: github.ref_name == 'master'
