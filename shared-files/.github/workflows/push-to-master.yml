@@ -14,6 +14,13 @@ on:
           - force_install
 
 jobs:
+  steps:
+      - name: Set Action
+        run: echo "ACTION=${{ github.event.inputs.action || 'install' }}" >> $GITHUB_ENV
+
+      - name: Use Action
+        run: |
+          echo "Using action: ${{ env.ACTION }}"
   ci:
     name: Test & Build
     secrets: inherit
@@ -46,7 +53,7 @@ jobs:
       service-name: ${{values.component_id}}
       env: dev
       profile: dev-rh
-      action: ${{ coalesce(github.event.inputs.action, 'install') }}
+      action: ${{ env.ACTION }}
 
 
   draft-release:
