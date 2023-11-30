@@ -67,11 +67,12 @@ spec:
 
         # /Users/loujaina.bakar/testing-temp-repo/shared-files
         # /Users/loujaina.bakar/testing-temp-repo/java-template/template-02.yaml
-    # - id: step1
-    #   name: First log
-    #   action: debug:log
-    #   input:
-    #     message: hello
+    - id: step1
+      name: First log
+      action: debug:log
+      input:
+        message: hello
+        url: ../shared-files
     - id: template
       name: Fetch Skeleton + Template
       action: fetch:template
