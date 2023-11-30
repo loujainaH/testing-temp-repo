@@ -54,9 +54,11 @@ spec:
   steps:
     - id: fetch-base
       name: Fetch Base
-      action: fetch:plain
+      action: fetch:template
       input:
         url: shared-files
+        values:
+          component_id: ${{ parameters.component_id }}
 
         # /Users/loujaina.bakar/testing-temp-repo/shared-files
         # /Users/loujaina.bakar/testing-temp-repo/java-template/template-02.yaml
