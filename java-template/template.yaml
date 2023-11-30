@@ -75,7 +75,7 @@ spec:
         url: ../shared-files
     - id: template
       name: Fetch Skeleton + Template
-      action: fetch:template
+      action: fetch:plain
       input:
         url: ../shared-files
         values:
