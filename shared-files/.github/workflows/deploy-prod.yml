@@ -23,4 +23,4 @@ jobs:
       service-name: ${{ vars.SERVICE_NAME }}
       env: prod
       profile: prod-rh
-      action: ${{ github.event.inputs.action || 'install'  }}
+      # action: ${{ github.event.inputs.action || 'install'  }}
