@@ -54,7 +54,7 @@ spec:
   steps:
     - id: fetch-base
       name: Fetch Base
-      action: fetch:template
+      action: fetch:plain
       input:
          url: ./shared-files
         values:
