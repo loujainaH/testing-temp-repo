@@ -20,7 +20,7 @@ jobs:
     uses: careem/shared-workflows/.github/workflows/devx.yml@master
     secrets: inherit
     with:
-      service-name: ${{values.component_id}}
+      service-name: ${{ vars.SERVICE_NAME }}
       env: prod
       profile: prod-rh
       action: ${{ github.event.inputs.action || 'install'  }}
