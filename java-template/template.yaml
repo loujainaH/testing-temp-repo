@@ -58,12 +58,12 @@ spec:
       input:
          url: ./shared-files
         values:
-          component_id: ${{ parameters.component_id }}
-          description: ${{ parameters.description }}
-          artifact_id: ${{ parameters.component_id }}
-          java_package_name: ${{ parameters.java_package_name }}
-          owner: ${{ parameters.owner }}
-          destination: ${{ parameters.repoUrl | parseRepoUrl }}
+          # component_id: ${{ parameters.component_id }}
+          # description: ${{ parameters.description }}
+          # artifact_id: ${{ parameters.component_id }}
+          # java_package_name: ${{ parameters.java_package_name }}
+          # owner: ${{ parameters.owner }}
+          # destination: ${{ parameters.repoUrl | parseRepoUrl }}
 
         # /Users/loujaina.bakar/testing-temp-repo/shared-files
         # /Users/loujaina.bakar/testing-temp-repo/java-template/template-02.yaml
