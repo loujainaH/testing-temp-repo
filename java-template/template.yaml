@@ -94,7 +94,7 @@ spec:
       input:
         url: ./java-k8s-service
         copyWithoutTemplating:
-          - ./testingCopy
+          - ./copyThis
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
