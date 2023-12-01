@@ -84,7 +84,7 @@ spec:
       name: Fetch workflow
       action: fetch:plain
       input:
-        url: ../.github/*
+        url: ../workflows
         values:
           component_id: ${{ parameters.component_id }}
 
@@ -94,7 +94,7 @@ spec:
       input:
         url: ../shared-files
         copyWithoutTemplating:
-          - .github/*
+          - ../testingCopy
         values:
           component_id: ${{ parameters.component_id }}
 
