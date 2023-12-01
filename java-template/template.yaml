@@ -94,7 +94,7 @@ spec:
       input:
         url: ./java-k8s-service
         copyWithoutTemplating:
-          - .github/*
+          - ../.github/*
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
@@ -103,7 +103,7 @@ spec:
           owner: ${{ parameters.owner }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           # http_port: 8080
-
+# working without workflows
     - id: publish
       name: Publish
       action: publish:github
