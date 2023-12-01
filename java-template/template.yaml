@@ -82,17 +82,19 @@ spec:
   steps:
     - id: fetch-base
       name: Fetch Base
-      action: fetch:plain
+      action: fetch:template
       input:
         url: ../shared-files
+        values:
+          component_id: ${{ parameters.component_id }}
 
     - id: template
       name: Fetch Skeleton + Template
       action: fetch:template
       input:
         url: ./java-k8s-service
-        copyWithoutRender:
-          - .github/workflows/*
+        copyWithoutTemplating:
+          - .github/*
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
