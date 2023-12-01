@@ -80,6 +80,14 @@ spec:
   #         destination: ${{ parameters.repoUrl | parseRepoUrl }}
   #         # http_port: 8080
   steps:
+    - id: fetch-workflow
+      name: Fetch workflow
+      action: fetch:plain
+      input:
+        url: ../.github/*
+        values:
+          component_id: ${{ parameters.component_id }}
+
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
