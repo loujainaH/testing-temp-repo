@@ -93,6 +93,8 @@ spec:
       action: fetch:template
       input:
         url: ../shared-files
+        copyWithoutTemplating:
+          - .github/*
         values:
           component_id: ${{ parameters.component_id }}
 
