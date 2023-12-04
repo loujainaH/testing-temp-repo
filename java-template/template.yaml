@@ -36,11 +36,11 @@ spec:
           type: string
           description: Owner of the component
           ui:field: OwnerPicker
-          ui:options:
-            allowedKinds:
-              - Group
-              - lojaina
-              - nadooda
+          # ui:options:
+          #   allowedKinds:
+          #     - Group
+          #     - lojaina
+          #     - nadooda
     - title: Choose a location
       required:
         - repoUrl
