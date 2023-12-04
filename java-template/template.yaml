@@ -39,6 +39,8 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+              - lojaina
+              - nadooda
     - title: Choose a location
       required:
         - repoUrl
