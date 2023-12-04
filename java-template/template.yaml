@@ -97,7 +97,7 @@ spec:
           - ../testingCopy
         values:
           component_id: ${{ parameters.component_id }}
-
+# working
     - id: template
       name: Fetch Skeleton + Template
       action: fetch:template
