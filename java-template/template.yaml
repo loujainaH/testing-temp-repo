@@ -39,8 +39,7 @@ spec:
           # ui:options:
           #   allowedKinds:
           #     - Group
-          #     - lojaina
-          #     - nadooda
+         
     - title: Choose a location
       required:
         - repoUrl
@@ -58,17 +57,17 @@ spec:
       name: Fetch workflow
       action: fetch:plain
       input:
-        url: ../workflows
+        url: ./workflows
         values:
           component_id: ${{ parameters.component_id }}
 
-    - id: fetch-base
-      name: Fetch Base
-      action: fetch:template
-      input:
-        url: ../shared-files
-        values:
-          component_id: ${{ parameters.component_id }}
+    # - id: fetch-base
+    #   name: Fetch Base
+    #   action: fetch:template
+    #   input:
+    #     url: ../shared-files
+    #     values:
+    #       component_id: ${{ parameters.component_id }}
 
     - id: template
       name: Fetch Skeleton + Template
