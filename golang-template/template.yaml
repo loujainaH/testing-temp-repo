@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: java-k8s-service-template
-  title: Java K8S Service Template
-  description: Template for creating new Java service to be deployed on K8S
+  name: go-service-template
+  title: Go Service Template
+  description: Template for creating new Go services 
 spec:
   owner: Infra-DevX
   type: service
@@ -13,17 +13,12 @@ spec:
       required:
         - component_id
         - owner
-        - java_package_name
       properties:
         component_id:
           title: Name
           type: string
           description: Unique name of the component
           ui:field: EntityNamePicker
-        java_package_name:
-          title: Java Package Name
-          type: string
-          description: Name for the java package. eg (io.backstage.blah)
         description:
           title: Description
           type: string
@@ -62,12 +57,11 @@ spec:
       name: Fetch Skeleton + Contract
       action: fetch:template
       input:
-        url: ./java-k8s-service
+        url: ./go-service
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
           artifact_id: ${{ parameters.component_id }}
-          java_package_name: ${{ parameters.java_package_name }}
           owner: ${{ parameters.owner }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
 

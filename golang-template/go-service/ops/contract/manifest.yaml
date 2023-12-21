@@ -1,0 +1,45 @@
+
+global:
+  meta:
+    service-info:
+      name:  ${{values.component_id}}
+      stack: 'golang'
+      stack-version: 'golang-1.20'
+  iam_permission_statements:
+    - Sid: SecretManager
+      Effect: Allow
+      Action:
+        - secretsmanager:GetSecretValue
+      Resource:
+        - arn:aws:secretsmanager:*:*:secret:*/${{values.component_id}}*
+  deployments:
+    deploy-to:
+      kubernetes:
+        prometheus:
+          enabled: 'yes'
+          path: '/prometheus'
+        applicationLogs:
+          enabled: 'no'
+        resources:
+          requests:
+            ephemeral-storage: 100Mi
+          limits:
+            ephemeral-storage: 500Mi
+
+dev-rh:
+  deployments:
+    deploy-to:
+      kubernetes:
+        env:
+          ENV: dev
+          PROFILE: dev
+          AWS_REGION: eu-west-1
+
+prod-rh:
+  deployments:
+    deploy-to:
+      kubernetes:
+        env:
+          ENV: prod
+          PROFILE: prod
+          AWS_REGION: eu-west-1

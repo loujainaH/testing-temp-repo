@@ -1,0 +1,19 @@
+name: PR CI
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+  # In urgent cases we allow to manually trigger this step
+  workflow_dispatch:
+
+  workflow_call:
+
+jobs:
+
+  # Runs Golang Unit-tests
+  ci:
+    uses: careem/shared-workflows/.github/workflows/golang.yml@master
+    secrets: inherit
+    with:
+      go-version: 1.19
