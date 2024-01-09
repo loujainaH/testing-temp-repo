@@ -57,6 +57,12 @@ spec:
         values:
           component_id: ${{ parameters.component_id }}
 
+    - id: fetch-components
+      name: Fetch Workflow
+      action: fetch:plain
+      input:
+        url: ../common-components
+
   
     - id: template
       name: Fetch Skeleton + Contract
